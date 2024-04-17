@@ -1,0 +1,30 @@
+
+form {
+    max-width: 400px; /* O el ancho que prefieras */
+    margin: auto;
+  }
+  
+  /* Alinea los labels y los inputs */
+  .form-control {
+    margin-bottom: 15px;
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .form-control label {
+    margin-bottom: 5px;
+  }
+  
+  /* Estilos para todos los inputs para que tengan el mismo ancho */
+  .form-control input {
+    width: 100%; /* Esto hace que el input tome el ancho completo de su contenedor */
+    padding: 10px;
+    box-sizing: border-box; /* Esto asegura que el padding no afecte el ancho final */
+  }
+  
+  /* Estilos para el botón */
+  .form-control button {
+    padding: 10px;
+    width: 100%; /* Opcional, si también quieres que el botón sea tan ancho como los inputs */
+    cursor: pointer;
+  }

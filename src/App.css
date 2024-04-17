@@ -28,6 +28,12 @@
   color: #61dafb;
 }
 
+.button-container {
+  display: flex;
+  justify-content: center; /* Alinea los elementos horizontalmente al centro */
+  gap: 20px; /* Espacio entre los botones */
+}
+
 @keyframes App-logo-spin {
   from {
     transform: rotate(0deg);
