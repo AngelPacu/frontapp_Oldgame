@@ -5,7 +5,6 @@ import { useNavigate } from 'react-router-dom'; // Importar useNavigate
 // Botón de Registro
 export const RegistroButton = () => {
     const navigate = useNavigate(); // Hook para la navegación
-  
     return (
       <Button variant="contained" color="primary" onClick={() => navigate('/register')}>
         Registro
@@ -14,8 +13,11 @@ export const RegistroButton = () => {
   };
 
 // Botón de Login
-export const LoginButton = ({ onClick }) => (
-  <Button variant="outlined" color="secondary" onClick={onClick}>
+export const LoginButton = ({ onClick }) => {
+  const navigate = useNavigate(); // Hook para la navegación
+  return (
+  <Button variant="outlined" color="secondary" onClick={() => navigate('/login')}>
     Login
   </Button>
-);
+  );
+}
