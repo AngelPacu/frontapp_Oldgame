@@ -1,44 +1,31 @@
-.App {
-  text-align: center;
+/* Importación de la fuente personalizada */
+@font-face {
+  font-family: 'MyCustomFont';
+  src: url('./font/OTF/MD.otf') format('opentype');
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+/* Estilos globales */
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'MyCustomFont', Arial, sans-serif; /* Asegúrate de caer en una fuente segura */
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
+/* Estilos para AppBar y otros elementos si es necesario */
+.AppBar {
+  background-color: #000;
   color: white;
 }
 
-.App-link {
-  color: #61dafb;
+/* Estilos para los botones, considerando la transición como se discutió */
+.Button {
+  background-color: #000;
+  color: white;
+  transition: background-color 0.3s ease-out, color 0.3s ease-out;
 }
 
-.button-container {
-  display: flex;
-  justify-content: center; /* Alinea los elementos horizontalmente al centro */
-  gap: 20px; /* Espacio entre los botones */
+.Button:hover {
+  background-color: white;
+  color: black;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
-}

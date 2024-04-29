@@ -3,6 +3,10 @@ form {
     max-width: 400px; /* O el ancho que prefieras */
     margin: auto;
   }
+
+h2 {
+    text-align: center;
+  }
   
   /* Alinea los labels y los inputs */
   .form-control {
@@ -28,3 +32,4 @@ form {
     width: 100%; /* Opcional, si también quieres que el botón sea tan ancho como los inputs */
     cursor: pointer;
   }
+
