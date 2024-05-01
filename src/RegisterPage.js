@@ -29,7 +29,7 @@ function RegisterPage() {
 
     const registerUser = async () => {
         try {
-            const response = await fetch('http://localhost:4000/api/users/register', {
+            const response = await fetch('http://localhost:4000/api/public/register', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json'
