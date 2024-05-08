@@ -1,5 +1,6 @@
 import React, { useContext } from 'react';
 import { AuthContext } from './AuthContext';
+import { UserFacturasButton } from './Button';
 
 import './App.css';
 
@@ -19,7 +20,7 @@ const AuthPage = () => {
       <h2>Hello, {user.username}</h2>
       <button>Añadir Productos</button>
       <button>Tramitar Compras</button>
-      <button>Historial de Compras</button>
+      <UserFacturasButton />
       <button onClick={logout}>Cerrar Sesión</button>
     </div>
   );

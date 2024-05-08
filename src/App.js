@@ -8,6 +8,7 @@ import LoginPage from './LoginPage';
 import HomePage from './HomePage';
 import AuthPage from './AuthPage';
 import { AuthProvider, AuthContext } from './AuthContext';
+import UserFacturas from './UserFacturas';
 
 // Ruta pública que redirige a /home_user si el usuario está autenticado
 const PublicRoute = ({ children }) => {
@@ -27,10 +28,10 @@ function App() {
         <Route path="/login" element={<PublicRoute><LoginPage /></PublicRoute>} />
         <Route path="/register" element={<PublicRoute><RegisterPage /></PublicRoute>} />
         <Route path="/home_user" element={<AuthPage />} />
+        <Route path="/home_user/facturas" element={<UserFacturas />} />
         {/* Asegúrate de que el resto de tus rutas estén aquí, cada una con su propio componente */}
       </Routes>
     </AuthProvider>
   );
 }
-
 export default App;
