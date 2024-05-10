@@ -1,6 +1,6 @@
 import React, { useContext } from 'react';
 import { AuthContext } from './AuthContext';
-import { UserFacturasButton } from './Button';
+import { UserFacturasButton, UserCarritoButton } from './Button';
 
 import './App.css';
 
@@ -19,7 +19,7 @@ const AuthPage = () => {
     <div>
       <h2>Hello, {user.username}</h2>
       <button>Añadir Productos</button>
-      <button>Tramitar Compras</button>
+      <UserCarritoButton />
       <UserFacturasButton />
       <button onClick={logout}>Cerrar Sesión</button>
     </div>

@@ -3,32 +3,33 @@ import { useNavigate } from 'react-router-dom';
 import { Table, TableBody, TableCell, TableContainer, TableHead, TableRow, Paper } from '@mui/material';
 import { HomeUserButton } from './Button';
 
+
 const TablaMUI = () => {
   const [factura, setFacturas] = useState([]);
   const navigate = useNavigate();
-  
   useEffect(() => {
+    const cargarFacturas = async () => {
+      const loginFetchConfig = {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json'
+        },
+        credentials: 'include', // Esto hace que se incluyan las cookies
+      };
+      try {
+        const response = await fetch('http://localhost:4000/api/public/facturas', loginFetchConfig);
+        const data = await response.json();
+        if (response.status === 500) {
+          navigate('/home_user');
+        } else {
+          setFacturas(data);
+        }
+      } catch (error) {
+        console.error('Error fetching data:', error);
+      }
+    };
     cargarFacturas();
-  }, []);
-
-
-  const loginFetchConfig = {
-    method: 'POST',
-    headers: {
-        'Content-Type': 'application/json'
-    },
-    credentials: 'include', // Esto hace que se incluyan las cookies
-}
-
-  const cargarFacturas = async () => {
-// Hook para la navegación
-    const response = await fetch('http://localhost:4000/api/public/facturas', loginFetchConfig);
-    const data = await response.json();
-    if (response.status  === 500) {
-        return navigate('/home_user')
-    }
-     else setFacturas(data);
-  };
+  }, [navigate]);
 
   return (
     <div>

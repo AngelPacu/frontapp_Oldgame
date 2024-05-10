@@ -54,6 +54,7 @@ function LoginPage() {
     const loginUser = async () => {
         try {
             const response = await fetch('http://localhost:4000/api/public/login', loginFetchConfig);
+            console.log(response);
             if (response.ok) {
                 const data = await response.json();
                 alert(`Inicio de sesión exitoso! Bienvenido, ${data.user}`);
