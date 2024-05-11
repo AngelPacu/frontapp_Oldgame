@@ -124,3 +124,28 @@ export const HomeUserButton = () => {
     </Button>
   );
 };
+
+// Botón para efectuar la ocmpra
+export const TramitarCompraButton = () => {
+  const navigate = useNavigate(); // Hook para la navegación/ Hook para la navegación
+  return (
+    <Button
+      variant="outlined"
+      color="primary"
+      onClick={() => navigate('/home_user/carrito/tramitando')}
+      sx={{               //Inicialmente, texto negro , fondo blanco
+        color: '#000',             
+        borderColor: '#000',       
+        backgroundColor: '#fff', 
+        '&:hover': {                //Al pasar el mouse, fondo negro, texto blanco
+          backgroundColor: '#000', 
+          color: '#fff',           
+          borderColor: '#000'      
+        },
+        margin: '5px'              // Margen alrededor de los botones
+      }}
+    >
+      Tramitar Compra
+    </Button>
+  );
+};

@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { Table, TableBody, TableCell, TableContainer, TableHead, TableRow, Paper } from '@mui/material';
-import { HomeUserButton } from './Button';
+import { HomeUserButton, TramitarCompraButton } from './Button';
 
 const TablaCarrito = () => {
   const [carrito, setCarrito] = useState([]);
@@ -21,10 +21,9 @@ const TablaCarrito = () => {
       try {
         const response = await fetch('http://localhost:4000/api/public/carrito', loginFetchConfig);
         const data = await response.json();
-        console.log(data);
         // Si el servidor responde con un error, redirigimos a la página de inicio
         if (response.status === 500) {
-          return navigate('/home_user');
+          return alert('No hay ningún carrito creado para el usuario'); 
         } else {
           if (montada) {
             setCarrito(data);
@@ -77,6 +76,7 @@ const TablaCarrito = () => {
         </Table>
       </TableContainer>
       <HomeUserButton />
+      <TramitarCompraButton align ='right'/>
     </div>
   );
 };

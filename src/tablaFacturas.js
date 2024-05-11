@@ -20,7 +20,7 @@ const TablaMUI = () => {
         const response = await fetch('http://localhost:4000/api/public/facturas', loginFetchConfig);
         const data = await response.json();
         if (response.status === 500) {
-          navigate('/home_user');
+          return alert('No hay ninguna factura del usuario')
         } else {
           setFacturas(data);
         }
@@ -45,8 +45,8 @@ const TablaMUI = () => {
             </TableRow>
           </TableHead>
           <TableBody>
-            {factura.map((facturaIndividual) => (
-              <TableRow key={facturaIndividual.usersId}>
+            {factura.map((facturaIndividual,index) => (
+              <TableRow key={index}>
                 <TableCell>{facturaIndividual.id}</TableCell>
                 <TableCell>{facturaIndividual.fecha}</TableCell>
                 <TableCell>{facturaIndividual.tarjeta}</TableCell>
