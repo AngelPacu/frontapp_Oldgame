@@ -15,7 +15,7 @@ import logo from './img/logo.jpeg';
 
 
 const AuthPage = () => {
-    const { user, logout } = useContext(AuthContext);
+    const { user } = useContext(AuthContext);
 
     if (!user) {
       return (

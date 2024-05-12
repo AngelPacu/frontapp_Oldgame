@@ -63,8 +63,7 @@ function LoginPage() {
                 login({ username: data.user });
                 navigate('/home_user'); // Redirige a la página del usuario
             } else {
-                const errorData = await response.json();
-                alert(`Error al iniciar sesión: ${errorData.message}`);
+                alert(`Error al iniciar sesión! Usuario o contraseña incorrectos.`);
             }
         } catch (error) {
             alert('Error al conectar con el servidor');

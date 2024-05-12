@@ -1,6 +1,7 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import Button from '@mui/material/Button';
 import { useNavigate } from 'react-router-dom';
+import { AuthContext } from './AuthContext';
 
 // Botón de Acceso a Registro page
 export const RegistroButton = () => {
@@ -194,6 +195,7 @@ export const UserFacturasButton = () => {
 // Botón de Historial de compras
 export const CerrarSesionButton = () => {
   const navigate = useNavigate(); // Hook para la navegación
+  const { logout } = useContext(AuthContext);
   return (
     <Button
       variant="contained"
