@@ -1,9 +1,7 @@
 import React, { useContext } from 'react';
 import AppBar from '@mui/material/AppBar';
 import Toolbar from '@mui/material/Toolbar';
-import Button from '@mui/material/Button';
-import { RegistroButton, LoginButton, VerCatalogo, VerCatalogoButton, TramitarCompraButton, CerrarSesionButton } from './Button';
-import { useNavigate } from 'react-router-dom';
+import { RegistroButton, LoginButton, VerCatalogo, VerCatalogoButton, UserCarritoButton, CerrarSesionButton } from './Button';
 import Typography from '@mui/material/Typography';
 import { AuthContext } from './AuthContext';
 import { UserFacturasButton } from './Button';
@@ -55,7 +53,7 @@ const AuthPage = () => {
         <div>
           {/*<h2>Hello, Josh</h2>*/}
           <VerCatalogoButton />
-          <TramitarCompraButton />
+          <UserCarritoButton />
           <UserFacturasButton />
           <CerrarSesionButton />
         </div>

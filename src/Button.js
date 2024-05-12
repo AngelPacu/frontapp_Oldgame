@@ -224,16 +224,14 @@ export const UserCarritoButton = () => {
       variant="outlined"
       color="primary"
       onClick={() => navigate('/home_user/carrito')}
-      sx={{               //Inicialmente, texto negro , fondo blanco
-        color: '#000',             
-        borderColor: '#000',       
-        backgroundColor: '#fff', 
-        '&:hover': {                //Al pasar el mouse, fondo negro, texto blanco
-          backgroundColor: '#000', 
-          color: '#fff',           
-          borderColor: '#000'      
+      sx={{             // ini fondo negro, texto blanco
+        backgroundColor: '#000',  
+        color: '#fff',             
+        '&:hover': {      // Al pasr el raton, fondo blanco texto negro
+          backgroundColor: '#fff', 
+          color: '#000',           
         },
-        margin: '5px'              // Margen alrededor de los botones
+        margin: '5px'              // Margen de los botones
       }}
     >
       Carrito

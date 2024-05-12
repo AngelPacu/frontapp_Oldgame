@@ -1,7 +1,6 @@
 import React, {useEffect} from 'react';
 import { AppBar, Toolbar, Typography, Box } from '@mui/material';
 import { HomeUserButton } from './Button';
-import logo from './img/logo.jpeg';
 import './ConfirmacionCompra.css';
 import chestgf from './img/chest.gif';
 
