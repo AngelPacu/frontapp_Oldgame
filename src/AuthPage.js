@@ -15,7 +15,6 @@ import logo from './img/logo.jpeg';
 
 
 const AuthPage = () => {
-  /*        /////////DESCOMENTAR LUEGOOOOOOOOOOO!!!!!!!!!!!!!!!!!!!
     const { user, logout } = useContext(AuthContext);
 
     if (!user) {
@@ -35,7 +34,7 @@ const AuthPage = () => {
         </div>
       );
     }
-*/
+
     return (
       <div className="auth-page" style={{ backgroundImage: `url(${bghomeuser})`, backgroundSize: 'cover', backgroundPosition: 'center' }}>
         <AppBar position="static" sx={{
@@ -54,8 +53,7 @@ const AuthPage = () => {
     </Toolbar>
 </AppBar>
         <div>
-          {/*<h2>Hello, {user.username}</h2>[DESCOMENTAR LUEGO!!!!!!!!!!!]*/}
-          <h2>Hello, Josh</h2>
+          {/*<h2>Hello, Josh</h2>*/}
           <VerCatalogoButton />
           <TramitarCompraButton />
           <UserFacturasButton />

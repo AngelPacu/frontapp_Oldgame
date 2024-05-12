@@ -198,7 +198,7 @@ export const CerrarSesionButton = () => {
     <Button
       variant="contained"
       color="primary"
-      /*onClick={logout}*/      // DESCOMENTAR LUEGO !!!!!!!!!!!!!!!!
+      onClick={logout}
       sx={{             // ini fondo negro, texto blanco
         backgroundColor: '#000',  
         color: '#fff',             
