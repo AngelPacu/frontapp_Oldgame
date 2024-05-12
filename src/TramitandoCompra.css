@@ -1,0 +1,13 @@
+.confirmacion-compra {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: #A4A5A6; /* Fondo gris claro */
+  text-align: center; /* Asegura que el texto esté centrado horizontalmente */
+}
+
+.confirmacion-compra img {
+  margin-top: 20px; /* Espacio entre el texto y el GIF */
+}

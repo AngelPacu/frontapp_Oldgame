@@ -1,5 +1,9 @@
 import React, {useEffect} from 'react';
+import { AppBar, Toolbar, Typography, Box } from '@mui/material';
 import { HomeUserButton } from './Button';
+import logo from './img/logo.jpeg';
+import './ConfirmacionCompra.css';
+import chestgf from './img/chest.gif';
 
 const ConfirmacionCompra = () => {
 
@@ -34,11 +38,15 @@ const ConfirmacionCompra = () => {
   }, []); // El array vacío [] asegura que esto se ejecute solo una vez al montar el componente
 
   return (
-    <div className="confirmacion-compra">
-      <h1>¡Compra Realizada!</h1>
-      <p>Gracias por tu compra. Tu pedido ha sido procesado correctamente.</p>
-      <HomeUserButton />
-    </div>
+
+
+      <div className="confirmacion-compra">
+        <img src={chestgf} alt="Exito"/>
+        <h1>¡Compra Realizada!</h1>
+        <p>Gracias por tu compra. Tu pedido ha sido procesado correctamente.</p>
+        <HomeUserButton />
+      </div>
+
   );
 };
 export default ConfirmacionCompra;

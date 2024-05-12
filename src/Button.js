@@ -2,7 +2,7 @@ import React from 'react';
 import Button from '@mui/material/Button';
 import { useNavigate } from 'react-router-dom';
 
-// Botón de Registro
+// Botón de Acceso a Registro page
 export const RegistroButton = () => {
   const navigate = useNavigate(); // Hook para la navegación
   return (
@@ -11,6 +11,30 @@ export const RegistroButton = () => {
       color="primary"
       onClick={() => navigate('/register')}
       sx={{             // ini fondo negro, texto blanco
+        backgroundColor: '#000',  
+        color: '#fff',             
+        '&:hover': {      // Al pasr el raton, fondo blanco texto negro
+          backgroundColor: '#fff', 
+          color: '#000',           
+        },
+        margin: '5px'              // Margen de los botones
+      }}
+    >
+      Registro
+    </Button>
+  );
+};
+
+// Botón de New registerRegistro
+export const RegistroNuevoButton = () => {
+  const navigate = useNavigate(); // Hook para la navegación
+  return (
+    <Button
+      type="submit"
+      variant="contained"
+      color="primary"
+      sx={{             // ini fondo negro, texto blanco
+        margin: 1,
         backgroundColor: '#000',  
         color: '#fff',             
         '&:hover': {      // Al pasr el raton, fondo blanco texto negro
@@ -50,27 +74,142 @@ export const LoginButton = () => {
   );
 };
 
-// Botón de UserFacturas
-export const UserFacturasButton = () => {
+
+
+// Botón de HomePage
+export const MakeLogInButton = () => {
+  const navigate = useNavigate(); // Hook para la navegación
+  return (
+    <Button type="submit" variant="contained" sx={{
+      backgroundColor: '#000', 
+      color: '#fff', 
+      '&:hover': {
+        backgroundColor: '#fff',
+        color: '#000'
+        },
+      margin: 1
+      }}>
+      Iniciar sesión
+    </Button>
+  );
+};
+
+
+// Botón de HomePage
+export const HomePageButton = () => {
   const navigate = useNavigate(); // Hook para la navegación
   return (
     <Button
       variant="outlined"
-      color="primary"
-      onClick={() => navigate('/home_user/facturas')}
-      sx={{               //Inicialmente, texto negro , fondo blanco
-        color: '#000',             
+      color="secondary"
+      onClick={() => navigate('/')}
+      sx={{               //Inicialmente, texto blanco , fondo negro
+        color: '#f0f0f0',             
         borderColor: '#000',       
-        backgroundColor: '#fff', 
-        '&:hover': {                //Al pasar el mouse, fondo negro, texto blanco
-          backgroundColor: '#000', 
-          color: '#fff',           
-          borderColor: '#000'      
+        backgroundColor: '#000', 
+        '&:hover': {                //Al pasar el mouse, fondo blanco, texto negro
+          backgroundColor: '#fff', 
+          color: '#000',           
+          borderColor: '#fff'      
         },
         margin: '5px'              // Margen alrededor de los botones
       }}
     >
+      Home
+    </Button>
+  );
+};
+
+// Botón de Ver el catalogo de videojuegos disponibles
+export const VerCatalogoButton = () => {
+  const navigate = useNavigate(); // Hook para la navegación
+  return (
+    <Button
+      variant="contained"
+      color="primary"
+      onClick={() => navigate('/catalogo')}
+      sx={{             // ini fondo negro, texto blanco
+        backgroundColor: '#000',  
+        color: '#fff',             
+        '&:hover': {      // Al pasr el raton, fondo blanco texto negro
+          backgroundColor: '#fff', 
+          color: '#000',           
+        },
+        margin: '5px'              // Margen de los botones
+      }}
+    >
+      Catalogo de videojuegos
+    </Button>
+  );
+};
+
+
+
+// Botón de tramitar una compra
+export const TramitarCompraButton = () => {
+  const navigate = useNavigate(); // Hook para la navegación
+  return (
+    <Button
+      variant="contained"
+      color="primary"
+      onClick={() => navigate('/home_user/carrito/tramitando')}
+      sx={{             // ini fondo negro, texto blanco
+        backgroundColor: '#000',  
+        color: '#fff',             
+        '&:hover': {      // Al pasr el raton, fondo blanco texto negro
+          backgroundColor: '#fff', 
+          color: '#000',           
+        },
+        margin: '5px'              // Margen de los botones
+      }}
+    >
+      Tramitar una compra
+    </Button>
+  );
+};
+
+// Botón de Historial de compras
+export const UserFacturasButton = () => {
+  const navigate = useNavigate(); // Hook para la navegación
+  return (
+    <Button
+      variant="contained"
+      color="primary"
+      onClick={() => navigate('/home_user/facturas')}
+      sx={{             // ini fondo negro, texto blanco
+        backgroundColor: '#000',  
+        color: '#fff',             
+        '&:hover': {      // Al pasr el raton, fondo blanco texto negro
+          backgroundColor: '#fff', 
+          color: '#000',           
+        },
+        margin: '5px'              // Margen de los botones
+      }}
+    >
       Historial de Compras
+    </Button>
+  );
+};
+
+// Botón de Historial de compras
+export const CerrarSesionButton = () => {
+  const navigate = useNavigate(); // Hook para la navegación
+  return (
+    <Button
+      variant="contained"
+      color="primary"
+      /*onClick={logout}*/      // DESCOMENTAR LUEGO !!!!!!!!!!!!!!!!
+      sx={{             // ini fondo negro, texto blanco
+        backgroundColor: '#000',  
+        color: '#fff',             
+        '&:hover': {      // Al pasr el raton, fondo blanco texto negro
+          backgroundColor: '#fff', 
+          color: '#000',           
+        },
+        margin: '5px'              // Margen de los botones
+      }}
+    >
+      Cerrar Sesión
     </Button>
   );
 };
@@ -100,52 +239,25 @@ export const UserCarritoButton = () => {
   );
 };
 
-// Botón de volver hacia atras.
+// Botón de volver a Home_User
 export const HomeUserButton = () => {
   const navigate = useNavigate(); // Hook para la navegación
   return (
     <Button
-      variant="outlined"
+      variant="contained"
       color="primary"
       onClick={() => navigate('/home_user')}
-      sx={{               //Inicialmente, texto negro , fondo blanco
-        color: '#000',             
-        borderColor: '#000',       
-        backgroundColor: '#fff', 
-        '&:hover': {                //Al pasar el mouse, fondo negro, texto blanco
-          backgroundColor: '#000', 
-          color: '#fff',           
-          borderColor: '#000'      
+      sx={{             // ini fondo negro, texto blanco
+        backgroundColor: '#000',  
+        color: '#fff',             
+        '&:hover': {      // Al pasr el raton, fondo blanco texto negro
+          backgroundColor: '#fff', 
+          color: '#000',           
         },
-        margin: '5px'              // Margen alrededor de los botones
+        margin: '5px'              // Margen de los botones
       }}
     >
       Volver
-    </Button>
-  );
-};
-
-// Botón para efectuar la ocmpra
-export const TramitarCompraButton = () => {
-  const navigate = useNavigate(); // Hook para la navegación/ Hook para la navegación
-  return (
-    <Button
-      variant="outlined"
-      color="primary"
-      onClick={() => navigate('/home_user/carrito/tramitando')}
-      sx={{               //Inicialmente, texto negro , fondo blanco
-        color: '#000',             
-        borderColor: '#000',       
-        backgroundColor: '#fff', 
-        '&:hover': {                //Al pasar el mouse, fondo negro, texto blanco
-          backgroundColor: '#000', 
-          color: '#fff',           
-          borderColor: '#000'      
-        },
-        margin: '5px'              // Margen alrededor de los botones
-      }}
-    >
-      Tramitar Compra
     </Button>
   );
 };

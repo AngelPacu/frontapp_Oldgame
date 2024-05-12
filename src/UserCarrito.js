@@ -4,7 +4,7 @@ import TablaCarrito from './tablaCarrito';
 function UserFacturas() {
     return (
         <div>
-            <h1>Carrito</h1>
+            <h1 style={{ textAlign: 'center', marginTop: '80px', marginBottom: '20px' }}>Carrito</h1>
             <TablaCarrito />
         </div>
     );

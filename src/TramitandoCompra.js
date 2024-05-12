@@ -1,4 +1,6 @@
 import React, { useEffect } from 'react';
+import kirbygf from './img/espere.gif';
+import './TramitandoCompra.css';
 
 const TramitandoCompra = () => {
   useEffect(() => {
@@ -41,8 +43,9 @@ const TramitandoCompra = () => {
 
       return (
         <div className="confirmacion-compra">
-          <h1>Tramitando compra...</h1>
-          <p>Ahora se reedirigirá a la página de compra</p>
+          <h1>Se está tramitando su compra</h1>
+          <p>Espere a que le redirigamos a la página de compra</p>
+          <img src={kirbygf} alt="Espere por favor" />
         </div>
       );
     };

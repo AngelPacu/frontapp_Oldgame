@@ -8,6 +8,7 @@ import Button from '@mui/material/Button';
 import './LoginPage.css';
 import logo from './img/logo.jpeg';
 import bgli from './img/BGlogin.jpg';
+import { RegistroButton, MakeLogInButton, HomePageButton } from './Button';
 
 
 function LoginPage() {
@@ -92,6 +93,10 @@ function LoginPage() {
                 <input type="password" name="password" value={formData.password} onChange={handleChange} />
             </div>
             <div style={{ display: 'flex', justifyContent: 'center' }}>
+                <MakeLogInButton />
+                <HomePageButton />
+                <RegistroButton />
+                {/*
                 <Button type="submit" variant="contained" sx={{
                     backgroundColor: '#000', 
                     color: '#fff', 
@@ -103,28 +108,7 @@ function LoginPage() {
                 }}>
                     Iniciar sesión
                 </Button>
-                <Button variant="contained" sx={{
-                    backgroundColor: '#000', 
-                    color: '#fff', 
-                    '&:hover': {
-                        backgroundColor: '#fff',
-                        color: '#000'
-                    },
-                    margin: 1
-                }} onClick={() => navigate('/')}>
-                    Home
-                </Button>
-                <Button variant="contained" sx={{
-                    backgroundColor: '#000', 
-                    color: '#fff', 
-                    '&:hover': {
-                        backgroundColor: '#fff',
-                        color: '#000'
-                    },
-                    margin: 1
-                }} onClick={() => navigate('/register')}>
-                    Registrarse
-                </Button>
+            VER SI VA MAKE LOG IN BUTTON; SI FUNCIONA ELIMINAR DE LA 99 A LA 111 (TODO LO COMENTADO INCLUIDO {}*/}
             </div>
         </form>
     </div>

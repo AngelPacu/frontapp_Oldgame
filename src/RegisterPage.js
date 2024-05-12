@@ -7,6 +7,7 @@ import Typography from '@mui/material/Typography';
 import './RegisterPage.css';
 import logo from './img/logo.jpeg';
 import BG from './img/BGreg.png';
+import { HomePageButton, RegistroNuevoButton } from './Button';
 
 function RegisterPage() {
     const navigate = useNavigate();
@@ -92,12 +93,11 @@ function RegisterPage() {
                     <input type="tel" name="telefono" pattern="[0-9]*" value={formData.telefono} onChange={handleChange} />
                 </div>
                 <div>
-                    <Button type="submit" variant="contained" color="primary" sx={{ margin: 1, backgroundColor: '#000', color: '#fff' }}>
+                    {/*<Button type="submit" variant="contained" color="primary" sx={{ margin: 1, backgroundColor: '#000', color: '#fff' }}>
                         Registrar
-                    </Button>
-                    <Button onClick={() => navigate('/')} variant="contained" color="primary" sx={{ margin: 1, backgroundColor: '#000', color: '#fff' }}>
-                        Home
-                    </Button>
+                    </Button> SI EL BOTON FUNCIONA DE REGISTRO NUEVO, BORRAR DE LA 96 A LA 98, DEL BOTON VIEJO*/}
+                    <RegistroNuevoButton />
+                    <HomePageButton />
                 </div>
             </form>
         </div>

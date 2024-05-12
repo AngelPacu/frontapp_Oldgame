@@ -11,13 +11,13 @@ body {
   font-family: 'MyCustomFont', Arial, sans-serif; /* Asegúrate de caer en una fuente segura */
 }
 
-/* Estilos para AppBar y otros elementos si es necesario */
+/* AppBar */
 .AppBar {
   background-color: #000;
   color: white;
 }
 
-/* Estilos para los botones, considerando la transición como se discutió */
+/* botones*/
 .Button {
   background-color: #000;
   color: white;
