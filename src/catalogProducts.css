@@ -1,0 +1,13 @@
+.product-images {
+    display: flex; /* Mostrar imágenes en fila */
+    flex-wrap: wrap; /* Permitir que las imágenes se ajusten al ancho del contenedor */
+    margin: -10px; /* Eliminar márgenes predeterminados */
+  }
+  
+  .product-images img {
+    width: 150px; /* Ajustar ancho de las imágenes */
+    height: auto; /* Mantener la proporción de aspecto */
+    margin: 10px; /* Agregar espacio entre imágenes */
+    border: 1px solid #ccc;
+  }
+  

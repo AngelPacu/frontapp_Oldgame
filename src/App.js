@@ -2,7 +2,7 @@ import './App.css';
 import React, {useContext} from 'react';
 
 // Imports Propios
-import { Routes, Route, Navigate } from 'react-router-dom';
+import {BrowserRouter as Router, Routes, Route, Navigate } from 'react-router-dom';
 import RegisterPage from './RegisterPage';
 import LoginPage from './LoginPage';
 import HomePage from './HomePage';
@@ -13,6 +13,8 @@ import UserCarrito from './UserCarrito';
 import TramitandoCompra from './TramitandoCompra';
 import ConfirmacionCompra from './ConfirmacionCompra';
 import CancelacionCompra from './CancelacionCompra';
+import CatalogProducts from './CatalogProducts'
+import ProductDetalle from './ProductoDetalle'
 
 // Ruta pública que redirige a /home_user si el usuario está autenticado
 const PublicRoute = ({ children }) => {
@@ -36,6 +38,8 @@ function App() {
         <Route path="/home_user/carrito/tramitando" element={<TramitandoCompra />} />
         <Route path="/home_user/success" element={<ConfirmacionCompra />} />
         <Route path="/home_user/cancel" element={<CancelacionCompra />} />
+        <Route path='/catalogo' element={<CatalogProducts/>}/>
+        <Route path='/catalogo/:id' element={<ProductDetalle/>}/>
 
         {/* Asegúrate de que el resto de tus rutas estén aquí, cada una con su propio componente */}
       </Routes>
