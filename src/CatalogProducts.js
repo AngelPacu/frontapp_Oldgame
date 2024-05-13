@@ -37,7 +37,7 @@ function Productos ({producto})  {
               ))}
             </div>
             <Typography variant="body2">{producto.descripcion}</Typography>
-            <Typography variant="h6">Precio: ${producto.precio}</Typography>
+            <Typography variant="h6">Precio: {producto.precio}€</Typography>
             <Link to={`/catalogo/${producto.id}`} state={{ producto }}>
                 <Button variant="contained" color="primary">Ver detalle</Button>
             </Link>

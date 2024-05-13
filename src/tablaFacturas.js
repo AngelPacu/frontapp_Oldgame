@@ -57,7 +57,17 @@ const TablaMUI = () => {
             {factura.map((facturaIndividual,index) => (
               <TableRow key={index}>
                 <TableCell>{facturaIndividual.id}</TableCell>
-                <TableCell>{facturaIndividual.fecha}</TableCell>
+                <TableCell>
+                  {new Date(facturaIndividual.fecha).toLocaleString('es-ES', {
+                  year: 'numeric',
+                  month: '2-digit',
+                  day: '2-digit',
+                  hour: '2-digit',
+                  minute: '2-digit',
+                  second: '2-digit',
+                  hour12: false
+                }).replace(/T/, ' ').replace(/\..+/, '')}
+                </TableCell>
                 <TableCell>{facturaIndividual.tarjeta}</TableCell>
                 <TableCell>{facturaIndividual.total}</TableCell>
                 <TableCell>{facturaIndividual.estado}</TableCell>

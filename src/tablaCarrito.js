@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
-import { AppBar, Toolbar, Typography, Table, TableBody, TableCell, TableContainer, TableHead, TableRow, Paper, Box } from '@mui/material';
+import { AppBar, Toolbar, Typography, Table, TableBody, TableCell, TableContainer, TableHead, TableRow, Paper, Box, Button } from '@mui/material';
 import { HomeUserButton, TramitarCompraButton } from './Button';
 import logo from './img/logo.jpeg';
 
@@ -10,7 +10,6 @@ const TablaCarrito = () => {
 
   useEffect(() => {
     let montada = true; // Flag para controlar si el componente está montado
-
     const cargarDetallesFacturas = async () => {
       const loginFetchConfig = {
         method: 'POST',
@@ -47,6 +46,27 @@ const TablaCarrito = () => {
     return sum + (detalle.cantidad * detalle.games.precio);
   }, 0);
 
+  const deleteGame = async (id) => {
+    const loginFetchConfig = {
+      method: 'DELETE',
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      credentials: 'include', // Esto hace que se incluyan las cookies
+    };
+    try {
+      const response = await fetch(`http://localhost:4000/api/public/carrito/modify/delete/${id}`, loginFetchConfig);
+      if (response.status === 200) {
+        const newCarrito = carrito.filter((detalle) => detalle.games.id !== id);
+        setCarrito(newCarrito);
+      } else {
+        alert('Error al eliminar el juego del carrito');
+      }
+    } catch (error) {
+      console.error('Error al eliminar el juego del carrito:', error);
+    }
+  }
+
 
   return (
     <div style={{ backgroundColor: '#BFBEBF', minHeight: '100vh', paddingTop: '64px' }}>
@@ -62,10 +82,10 @@ const TablaCarrito = () => {
         <Table>
           <TableHead>
             <TableRow>
-              <TableCell>Nombre del juego</TableCell>
-              <TableCell>Cantidad</TableCell>
-              <TableCell>Descuento</TableCell>
-              <TableCell>Precio</TableCell>
+              <TableCell><b>Nombre del juego</b></TableCell>
+              <TableCell><b>Cantidad</b></TableCell>
+              <TableCell><b>Descuento</b></TableCell>
+              <TableCell><b>Precio</b></TableCell>
             </TableRow>
           </TableHead>
           <TableBody>
@@ -75,6 +95,7 @@ const TablaCarrito = () => {
                 <TableCell>{carrito.cantidad}</TableCell>
                 <TableCell>{carrito.descuento}</TableCell>
                 <TableCell>{carrito.games.precio} €</TableCell>
+                <Button onClick={() => deleteGame(carrito.games.id)}>ELIMINAR</Button>
               </TableRow>
             ))}
             <TableRow>

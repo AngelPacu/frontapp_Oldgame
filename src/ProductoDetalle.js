@@ -68,7 +68,7 @@ const ProductoDetalle = () => {
               ))}
             </div>
             <Typography variant="body2">{producto.descripcion}</Typography>
-            <Typography variant="h6">Precio: ${producto.precio}</Typography>
+            <Typography variant="h6">Precio: {producto.precio}€</Typography>
             <TextField
               label="Cantidad"
               type="number"
