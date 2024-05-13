@@ -1,47 +1,42 @@
 import React,{useState, useEffect} from "react"; 
 import { Link } from "react-router-dom";
-import { Card, CardContent, CardMedia, Typography, Box } from "@mui/material";
+import { Card, CardContent, CardMedia, Typography, CardActionArea } from "@mui/material";
+import { AppBar, Toolbar } from '@mui/material';
 import Button from '@mui/material/Button';
 //import useProductos from "./productGetGames";
 import './catalogProducts.css';
-
+import { HomeUserButton, UserCarritoButton } from './Button';
+import logo from './img/logo.jpeg';
 
 function Productos ({producto})  {
-    const trailerurl = producto.trailer;
     return (
      <Card>
+        <div className="cardMediaContainer">
         <CardMedia
             component="img"
-            height="140"
             image={producto.thumbnail}
             alt={producto.nombre}
         />
-       <Box sx={{ width: '50%', maxWidth: 400, mt: 16 }}>
-          <iframe
-            width="100%"
-            height="200"
-            src={trailerurl}
-            title="YouTube video player"
-            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-            allowFullScreen
-            style={{ display: 'block', marginLeft: 'auto', marginRight: 'auto' }}
-          ></iframe>
-
-        </Box>
-        
+        </div>
+      
+        <div className="cardInfoContainer">
         <CardContent>
             <Typography variant="h5">{producto.nombre}</Typography>
             <div className="product-images">
-                {producto.imagen.map((imageUrl) => (
-            <img key={imageUrl} src={imageUrl} alt={producto.nombre} />
+                {producto.imagen.map((imageUrl, index) => (
+            <img key={index} src={imageUrl} alt={producto.nombre} className={"small-image"}/>
               ))}
             </div>
             <Typography variant="body2">{producto.descripcion}</Typography>
             <Typography variant="h6">Precio: {producto.precio}€</Typography>
+            <CardActionArea>
+
             <Link to={`/catalogo/${producto.id}`} state={{ producto }}>
                 <Button variant="contained" color="primary">Ver detalle</Button>
             </Link>
+            </CardActionArea>
         </CardContent>
+        </div>
      </Card>
     )
 
@@ -62,15 +57,27 @@ function Productos ({producto})  {
                 console.error('Error al obtener productos:', error);
             }
         }
-
         fetchProducts();
     }, []);
     return (
-        <div className="productos-container">
+        <div className="productos-app">
+                   <div className="appBarContainer">     
+       <AppBar position="static" sx={{ backgroundColor: '#000', width: '100%' }}>
+        <Toolbar sx={{ justifyContent: 'center' }}>
+          <img src={logo} alt="GameLand Logo" style={{ height: 50, marginRight: 10 }} />
+          <Typography variant="h6" color="inherit" sx={{ fontFamily: 'MyCustomFont' }}>
+            GameLand
+          </Typography>
+        </Toolbar>
+      </AppBar>
+      </div>
         <h2>Productos destacados</h2>
-        <div><Link to="/home_user/carrito">
-          <Button variant="contained" color="secondary">Ver carrito</Button>
-        </Link></div>
+        <div className="homeCarritoButtonsContainer">
+        <div style={{ display: 'flex', justifyContent: 'flex-end', paddingRight: '20px', marginTop: '10px' }}>
+            <UserCarritoButton />
+            <HomeUserButton />
+        </div>
+        </div>
         <div className="productos-grid">
             {productos.map((producto) => (
                 <Productos key={producto.id} producto={producto} />

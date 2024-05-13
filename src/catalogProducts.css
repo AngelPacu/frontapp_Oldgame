@@ -1,13 +1,85 @@
+
+body {
+  background-color: #f0f0f0;
+}
+
+.productos-container {
+  margin: 20px; /* Agregar un espacio alrededor de toda la página */
+}
+
+.card {
+  width: calc(100% - 40px); /* Ajustar el ancho de la tarjeta y restar el espacio de margen */
+  margin-bottom: 20px; /* Agregar un espacio en la parte inferior de cada tarjeta */
+}
+.productos-grid {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.productos-container {
+  margin: 20px; /* Agregar un espacio alrededor de toda la página */
+  background-color: #f0f0f0;
+}
+
+.card {
+  width: calc(100% - 40px); /* Ajustar el ancho de la tarjeta y restar el espacio de margen */
+  margin-bottom: 20px; /* Agregar un espacio en la parte inferior de cada tarjeta */
+
+}
+
+.cardMediaContainer {
+  position: relative;
+  width: 100%;
+  height: 100vh; /* Establece la altura del contenedor al 100% de la altura de la ventana */
+  display: flex;
+  justify-content: center; /* Centra horizontalmente */
+  align-items: center; /* Centra verticalmente */
+  background-color: #A4A5A6;
+}
+
+.cardMediaContainer img {
+  max-width: 750px; /* Establece el ancho máximo de la imagen */
+  max-height: 100%; /* Ajusta la altura automáticamente para mantener la relación de aspecto */
+  object-fit: cover; /* Asegura que la imagen se ajuste al contenedor sin distorsión */
+}
+
+.cardInfoContainer {
+  padding: 16px;
+}
+
 .product-images {
-    display: flex; /* Mostrar imágenes en fila */
-    flex-wrap: wrap; /* Permitir que las imágenes se ajusten al ancho del contenedor */
-    margin: -10px; /* Eliminar márgenes predeterminados */
-  }
-  
-  .product-images img {
-    width: 150px; /* Ajustar ancho de las imágenes */
-    height: auto; /* Mantener la proporción de aspecto */
-    margin: 10px; /* Agregar espacio entre imágenes */
-    border: 1px solid #ccc;
-  }
-  
+  display: flex;
+  flex-wrap: wrap;
+  margin-top: 10px;
+}
+.small-image {
+  width: 20%; /* Ajustar el tamaño según tus preferencias */
+  height: auto;
+  margin-right: 10px; /* Agregar un poco de espacio entre las imágenes pequeñas */
+}
+
+.thumbnail {
+  width: 50px;
+  height: auto;
+  margin-bottom: 10px;
+}
+
+.secondary-image {
+  width: 20%; /* Ajustar el tamaño según tus preferencias */
+  height: auto;
+  margin-right: 10px; /* Agregar un poco de espacio entre las imágenes secundarias */
+}
+.appBarContainer {
+  position: sticky;
+  top: 0;
+  z-index: 1000; /* Asegura que la AppBar esté encima de otros elementos */
+  width: 100%;
+}
+
+.homeCarritoButtonsContainer {
+  position: sticky;
+  top: 56px; /* Ajusta el valor según la altura de la AppBar */
+  z-index: 1000; /* Asegura que los botones estén encima de otros elementos */
+  width: 100%;
+}

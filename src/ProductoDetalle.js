@@ -1,10 +1,10 @@
 import React, { useState, useEffect } from 'react';
-import { useNavigate, useParams } from 'react-router-dom';
+import { useParams } from 'react-router-dom';
 import { Card, CardContent, Typography, Button, TextField } from '@mui/material';
+import { VerCatalogoButton } from './Button';
 
 const ProductoDetalle = () => {
   const { id } = useParams(); // Obtener el ID del producto de la URL
-  const volver = useNavigate();
   const [producto, setProducto] = useState(null); // Estado para almacenar los detalles del producto
   const [cantidad, setCantidad] = useState(1); // Estado para la cantidad del producto
 
@@ -39,11 +39,11 @@ const ProductoDetalle = () => {
         headers: {
           'Content-Type': 'application/json',
         },
-        body: JSON.stringify({
+        body: JSON.stringify({ // Convierte de JS a formato JSON
           gameId: producto.id, // ID del producto que se desea agregar al carrito
           cantidad: cantidad, // Cantidad del producto que se desea agregar al carrito
         }),
-        credentials: 'include', // Esto hace que se incluyan las cookies
+        credentials: 'include',
       });
       if (!response.ok) {
         throw new Error('No se pudo agregar el producto al carrito');
@@ -53,19 +53,15 @@ const ProductoDetalle = () => {
       console.error('Error al agregar el producto al carrito:', error);
     }
   };
-  const handleVolverCatalogo = () => {
-    volver('/catalogo'); // Ruta del catálogo de productos
-  };
-
   return (
-    <div className="producto-detalle-container">
+    <div className="cardMediaContainer">
       {producto && (
         <Card>
           <CardContent>
             <Typography variant="h5">{producto.nombre}</Typography>
             <div className="product-images">
                 {producto.imagen.map((imageUrl) => (
-            <img key={imageUrl} src={imageUrl} alt={producto.nombre} />
+            <img key={imageUrl} src={imageUrl} alt={producto.nombre} className={"small-image"} />
               ))}
             </div>
             <Typography variant="body2">{producto.descripcion}</Typography>
@@ -77,12 +73,19 @@ const ProductoDetalle = () => {
               onChange={handleCantidadChange}
               variant="outlined"
             />
-            <Button variant="contained" color="primary" onClick={agregarAlCarrito}>
+            <Button variant="contained" sx={{
+              backgroundColor: '#000',  
+              color: '#fff',             
+              '&:hover': {      // Al pasr el raton, fondo blanco texto negro
+              backgroundColor: '#fff', 
+              color: '#000',           
+              },
+              margin: '5px'              // Margen de los botones
+            }} 
+            onClick={agregarAlCarrito}>
               Agregar al carrito
             </Button>
-            <Button variant="outlined" onClick={handleVolverCatalogo}>
-              Volver al Catálogo
-            </Button>
+            <VerCatalogoButton />
           </CardContent>
         </Card>
       )}
