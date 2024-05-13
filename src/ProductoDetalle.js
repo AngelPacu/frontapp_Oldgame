@@ -43,6 +43,7 @@ const ProductoDetalle = () => {
           gameId: producto.id, // ID del producto que se desea agregar al carrito
           cantidad: cantidad, // Cantidad del producto que se desea agregar al carrito
         }),
+        credentials: 'include', // Esto hace que se incluyan las cookies
       });
       if (!response.ok) {
         throw new Error('No se pudo agregar el producto al carrito');
